@@ -21,6 +21,20 @@ pipeline {
         }
       }
     }
+    stage('Sequential') {
+      stages {
+        stage('push to docker repo') {
+          steps {
+            echo "In Sequential 1"
+          }
+        }
+        stage('update helm charts') {
+          steps {
+            echo "In Sequential 2"
+          }
+        }
+      }
+    }
     stage('Deploy') {
       steps {
         echo 'Deploying..'
