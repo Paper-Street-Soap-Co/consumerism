@@ -54,28 +54,6 @@ stage("build and deploy on Windows and Linux") {
                 }
             }
         }
-    stage("push to repo") { 
-      parallel {
-        stage('docker') {
-          stages {
-            stage('docker') {
-              steps {
-                echo "docker"
-              }
-            }
-          }
-        }
-        stage("helm") {
-          stages {
-            stage('helm') {
-              steps {
-                echo "helm"
-              }
-            }
-          }
-        }
-      }
-    }
     stage('Deploy') {
       steps {
         echo 'Deploying..'
