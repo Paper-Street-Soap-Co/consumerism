@@ -21,39 +21,38 @@ pipeline {
         }
       }
     }
-stage("build and deploy on Windows and Linux") {
-            parallel {
-                stage("windows") {
-                    stages {
-                        stage("build") {
-                            steps {
-                                echo "blah"
-                            }
-                        }
-                        stage("deploy") {
-                            steps {
-                                echo "blah"
-                            }
-                        }
-                    }
-                }
-
-                stage("linux") {
-                    stages {
-                        stage("build") {
-                            steps {
-                                echo "blah"
-                            }
-                        }
-                        stage("deploy") {
-                             steps {
-                                echo "blah"
-                            }
-                        }
-                    }
-                }
+    stage("update docker/helm repos") {
+      parallel {
+        stage("docker") {
+          stages {
+            stage("docker build") {
+              steps {
+                echo "blah"
+              }
             }
+          stage("docker push") {
+            steps {
+              echo "blah"
+            }
+          }
         }
+
+        stage("helm") {
+          stages {
+            stage("package") {
+              steps {
+                echo "blah"
+              }
+            }
+            stage("serve") {
+              steps {
+                echo "blah"
+              }
+            }
+          }
+        }
+      }
+    }
     stage('Deploy') {
       steps {
         echo 'Deploying..'
