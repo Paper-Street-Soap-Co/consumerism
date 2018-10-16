@@ -21,7 +21,7 @@ pipeline {
         }
       }
     }
-    stage("push to repo) { 
+    stage("push to repo") { 
       parallel {
         stage('docker') {
           stages {
