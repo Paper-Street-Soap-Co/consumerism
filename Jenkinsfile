@@ -25,18 +25,18 @@ pipeline {
       parallel {
         stage('docker') {
           stages {
-            stage('push to repo') {
+            stage('docker') {
               steps {
-                echo "In Sequential 1"
+                echo "docker"
               }
             }
           }
         }
         stage("helm") {
           stages {
-            stage('push to repo') {
+            stage('helm') {
               steps {
-                echo "In Sequential 1"
+                echo "helm"
               }
             }
           }
@@ -46,6 +46,11 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying..'
+      }
+    }
+    stage('Validate') {
+      steps {
+        echo 'Validate..'
       }
     }
   }
