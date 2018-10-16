@@ -21,6 +21,39 @@ pipeline {
         }
       }
     }
+stage("build and deploy on Windows and Linux") {
+            parallel {
+                stage("windows") {
+                    stages {
+                        stage("build") {
+                            steps {
+                                echo "blah"
+                            }
+                        }
+                        stage("deploy") {
+                            steps {
+                                echo "blah"
+                            }
+                        }
+                    }
+                }
+
+                stage("linux") {
+                    stages {
+                        stage("build") {
+                            steps {
+                                echo "blah
+                            }
+                        }
+                        stage("deploy") {
+                             steps {
+                                echo "blah"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     stage("push to repo") { 
       parallel {
         stage('docker') {
