@@ -42,7 +42,7 @@ stage("build and deploy on Windows and Linux") {
                     stages {
                         stage("build") {
                             steps {
-                                echo "blah
+                                echo "blah"
                             }
                         }
                         stage("deploy") {
