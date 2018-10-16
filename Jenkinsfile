@@ -30,21 +30,21 @@ pipeline {
                 echo "blah"
               }
             }
-          stage("docker push") {
-            steps {
-              echo "blah"
-            }
-          }
-        }
-
-        stage("helm") {
-          stages {
-            stage("package") {
+            stage("docker push") {
               steps {
                 echo "blah"
               }
             }
-            stage("serve") {
+          }
+        }
+        stage("helm") {
+          stages {
+            stage("helm package") {
+              steps {
+                echo "blah"
+              }
+            }
+            stage("helm serve") {
               steps {
                 echo "blah"
               }
