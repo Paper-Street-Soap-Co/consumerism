@@ -1,2 +1,2 @@
 # consumerism
-acquisition of goods and services
+acquisition of goods and hotfix services
