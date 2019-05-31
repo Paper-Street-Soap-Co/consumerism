@@ -39,12 +39,7 @@ pipeline {
         }
         stage("helm") {
           stages {
-            stage("helm package") {
-              steps {
-                echo "blah"
-              }
-            }
-            stage("helm serve") {
+            stage("create helm chart") {
               steps {
                 echo "blah"
               }
